@@ -1,0 +1,1051 @@
+:root {
+  --primary-color: #4a90e2;
+  --primary-hover: #357abd;
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --border-color: #e1e8ed;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+ 
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #4a90e2 100%);
+  border-radius: var(--border-radius);
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.featured-game {
+  margin-bottom: 3rem;
+}
+
+.game-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.game-cover {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  background-image: url(assets/ender\ lilies.jpg_large);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-info .meta {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  
+}
+
+.game-card {
+  cursor: pointer;
+  height: 500px;
+}
+
+.game-card-image {
+  width: 100%;
+  height: 260px;
+  border-radius: var(--border-radius);
+  background-image: url(assets/ender\ lilies.jpg_large);
+  background-size: cover;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.game-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.game-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.image-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  height: 600px;
+  background-image: url(assets/ender-lilies-slide.png);
+  background-size: cover;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.slider-btn:hover {
+  background: white;
+  box-shadow: var(--shadow-md);
+}
+
+.slider-btn.prev {
+  left: 1rem;
+}
+
+.slider-btn.next {
+  right: 1rem;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: white;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.file-upload {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.file-upload:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+.file-upload input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #4a90e2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.profile-info h2 {
+  margin-bottom: 0.5rem;
+}
+
+.profile-info .join-date {
+  color: var(--text-secondary);
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.badge {
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.badge:hover {
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-name {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+}
+
+.faq-question {
+  background: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background-color: var(--bg-color);
+}
+
+.faq-answer {
+  padding: 1rem 1.5rem;
+  color: var(--text-secondary);
+  display: none;
+}
+
+.faq-answer.active {
+  display: block;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--card-bg);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+
+/* أضف هذه الأنماط لملف style.css */
+
+/* أنماط تسجيل الدخول */
+.btn-google {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+/* أنماط القائمة العلوية */
+.auth-section {
+  margin-left: auto;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+
+.game-card-image.ender-magnolia {
+  background-image: url('assets/ender-magnolia.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* --- تحسينات أقسام تحليل اللعبة (Ender Lilies) --- */
+
+/* تعديل شبكات المناطق والإنجازات */
+.areas-grid, .achievements-grid {
+  /* زيادة المسافة بين العناصر لتحسين مظهر البطاقات */
+  gap: 1rem; 
+  /* تعديل الحد الأدنى للعرض لتبدو البطاقات أكبر قليلاً على الشاشات الواسعة */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+}
+
+/* نمط بطاقة لكل عنصر من المناطق أو الإنجازات */
+.area-item, .achievement-item {
+  padding: 1rem; /* زيادة الهامش الداخلي */
+  margin-bottom: 0; /* إلغاء الهامش السفلي حيث يتولى الـ gap المهمة */
+  background: var(--card-bg); /* خلفية بيضاء / خلفية البطاقة */
+  /* إطار خفيف وجذاب */
+  border: 2px solid var(--border-color); 
+  border-radius: var(--border-radius); /* استخدام حواف مستديرة كبيرة */
+  font-size: 0.95rem; 
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center; /* توسيط النص داخل البطاقة */
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm); /* ظل خفيف */
+  min-height: 50px; /* لضمان حد أدنى من الارتفاع */
+  display: flex; /* لضمان توسيط محتوى النص عمودياً */
+  align-items: center;
+  justify-content: center;
+}
+
+/* تأثير المرور (Hover Effect) لجعلها أكثر تفاعلية */
+.area-item:hover, .achievement-item:hover {
+  border-color: var(--primary-color); /* تغيير لون الإطار للون الأساسي */
+  transform: translateY(-2px); /* رفع البطاقة قليلاً */
+  box-shadow: var(--shadow-md); /* زيادة الظل */
+  cursor: default;
+}
+
+
+/* --- نمط الإنجاز الذهبي (Ending B) --- */
+
+.achievement-item.golden-achievement {
+  /* تلوين الخلفية والإطار بلون ذهبي */
+  background: #fff8e1; /* خلفية صفراء/ذهبية فاتحة */
+  border-color: #ffd700; /* إطار ذهبي صريح */
+  color: #a07d00; /* لون نص ذهبي غامق */
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4), var(--shadow-sm); /* ظل ذهبي لامع */
+  
+  /* تأثير وميض طفيف */
+  animation: glow 1.5s infinite alternate; 
+}
+
+/* تأثير Hover للإنجاز الذهبي */
+.achievement-item.golden-achievement:hover {
+  border-color: #ffc107; /* ذهبي أفتح عند المرور */
+  transform: scale(1.03) translateY(-3px); /* تأثير أقوى قليلاً */
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.6), var(--shadow-md);
+}
+
+
+/* إطار الإنجاز الذهبي المتحرك */
+@keyframes glow {
+  from {
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+  }
+  to {
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.6), 0 0 5px rgba(255, 215, 0, 0.8);
+  }
+}
+
+
+/* تحسينات للشريط العلوي على الأجهزة المحمولة */
+@media (max-width: 768px) {
+  .user-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .auth-section {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+
+/* أنماط الصفحات المحمية */
+.protected-route {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* أضف هذه الأنماط لملف style.css */
+
+/* أنماط تسجيل الدخول */
+.btn-google {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+/* أنماط القائمة العلوية */
+.auth-section {
+  margin-left: auto;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar.fallback {
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* تحسينات للشريط العلوي على الأجهزة المحمولة */
+@media (max-width: 768px) {
+  .user-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .auth-section {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .user-name {
+    display: none;
+  }
+}
+
+/* أنماط الصفحات المحمية */
+.protected-route {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* تحسينات للصفحة الشخصية */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar {
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.join-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* تحسينات للشبكات */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.badge {
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* أنماط صور الألعاب */
+.game-card-image.hollow-knight {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background-image: url('assets/hollow-cover.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-card-image.ender-lilies {
+  background: linear-gradient(135deg, #2d1b69, #1a1035);
+  background-image: url('assets/ender-lilies.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-cover.hollow-knight {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background-image: url('assets/hollow-cover.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-cover.ender-lilies {
+  background: linear-gradient(135deg, #2d1b69, #1a1035);
+  background-image: url('assets/ender-lilies.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-analysis {
+  max-width: 100%;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.completion-badge {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  min-width: 120px;
+}
+
+.completion-percent {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spirits-list, .passives-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 1rem;
+}
+
+.spirit-item, .passive-item, .area-item, .achievement-item {
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.spirit-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spirit-level {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.progress-section, .achievements-section {
+  margin-top: 2rem;
+}
+
+.areas-grid, .achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .analysis-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .areas-grid, .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .game-header {
+    flex-direction: column;
+  }
+
+  .game-cover {
+    width: 100%;
+    height: 300px;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+}
